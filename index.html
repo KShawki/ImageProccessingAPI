@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instruction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .containerr {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .api {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main containerr mx-auto">
+      <h1 class="text-3xl text-center mt-10 font-bold">
+        Image Processing API with Sharp
+      </h1>
+      <p class="text-center m-2">
+        Advanced Full-Stack Web Development Nanodegree Program - EgFWD
+      </p>
+
+      <!-- About The Project -->
+      <div
+        class="px-4 py-3 leading-normal text-sky-700 bg-sky-200 rounded-lg mt-10"
+        role="alert"
+      >
+        <h1 class="font-bold text-xl p-2">About The Project</h1>
+        <p class="text-justify p-2">
+          This project aims to give you a real-world scenario in which you would
+          read and write to your disk via a Node.js express server rather than a
+          database. The project you create serves two purposes: to prepare you
+          for setting up scalable code and architecture for real-world projects
+          and tie together some of the most popular middleware and utilities
+          found in Node.js projects. This project barely touches the surface of
+          what is possible but will prove your ability to use what you’ve
+          learned in real-world scenarios. For this project, refactor and test
+          as much as possible while you are building. Since you are using
+          TypeScript and an unfamiliar library, it is sometimes easier to write
+          and build in plain JS to see what your functions return; remember your
+          submission needs to be in TypeScript. As your skills improve, typing
+          in TypeScript will feel more intuitive. Make sure to remove any
+          debugging code from your final submission.
+        </p>
+      </div>
+
+      <div
+        class="px-4 py-3 leading-normal text-rose-700 bg-rose-100 rounded-lg mt-5"
+        role="alert"
+      >
+        <h1 class="font-bold text-xl p-2">Usage</h1>
+        <div class="p-2">
+          <p class="font-bold mb-2">Resize Image</p>
+          <p class="api">
+            <b class="mr-10">GET: </b>
+            "http://localhost:3000/resize?name={imgName}&width={100}&height={100}&fileExtension=png"
+          </p>
+        </div>
+        <div class="p-2">
+          <p class="font-bold mb-2">Format Image</p>
+          <p class="api">
+            <b class="mr-10">GET: </b>
+            "http://localhost:3000/resize?name={imgName}&width={100}&height={100}&fileExtension=png"
+          </p>
+        </div>
+        <div class="p-2">
+          <p class="font-bold mb-2">Convert Image</p>
+          <p class="api">
+            <b class="mr-10">GET: </b>
+            "http://localhost:3000/resize?name={imgName}&width={100}&height={100}&fileExtension=png"
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="px-4 py-3 leading-normal text-amber-700 bg-amber-100 rounded-lg mt-5"
+        role="alert"
+      >
+        <h1 class="font-bold text-xl">API Endpoints</h1>
+        <div class="mt-2">
+          <code>
+            $ git clone 
+            $ npm install
+          </code>
+          
+        </div>
+      </div>
+
+      <div
+        class="px-4 py-3 leading-normal text-slate-700 bg-slate-100 rounded-lg mt-5"
+        role="alert"
+      >
+        <div align="center">
+          The Project made with ❤️ by <b>Khalid Shawki</b> | GitHub:
+          <a href="https://github.com/KShawki" class="font-bold">KShawki</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
