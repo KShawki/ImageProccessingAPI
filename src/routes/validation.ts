@@ -12,13 +12,13 @@ const Exsisting = async (
   res: express.Response,
   next: express.NextFunction
 ) => {
-  const folder_path = `${
-    path.join(__dirname, '../../../images/thumb/') + req.query.imgName
+  const filePath = `${
+    path.join(__dirname, '../../../assets/thumb/') + req.query.name
   }_thumb_${req.query.width}_${req.query.height}.${req.query.fileExtension}`;
 
   try {
-    await fs.promises.readFile(folder_path);
-    res.status(200).sendFile(folder_path);
+    await fs.promises.readFile(filePath);
+    res.status(200).sendFile(filePath);
   } catch (err) {
     next();
   }

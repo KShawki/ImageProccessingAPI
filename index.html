@@ -17,6 +17,14 @@
         padding: 10px;
         border-radius: 10px;
       }
+
+      .code {
+        background-color: #272727c0;
+        color: #fff;
+        padding: 10px 10px;
+        margin-left: 10px;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -61,21 +69,7 @@
           <p class="font-bold mb-2">Resize Image</p>
           <p class="api">
             <b class="mr-10">GET: </b>
-            "http://localhost:3000/resize?name={imgName}&width={100}&height={100}&fileExtension=png"
-          </p>
-        </div>
-        <div class="p-2">
-          <p class="font-bold mb-2">Format Image</p>
-          <p class="api">
-            <b class="mr-10">GET: </b>
-            "http://localhost:3000/resize?name={imgName}&width={100}&height={100}&fileExtension=png"
-          </p>
-        </div>
-        <div class="p-2">
-          <p class="font-bold mb-2">Convert Image</p>
-          <p class="api">
-            <b class="mr-10">GET: </b>
-            "http://localhost:3000/resize?name={imgName}&width={100}&height={100}&fileExtension=png"
+            "http://localhost:3000/resize?name=fjord&width=400&height=3000&fileExtension=jpg"
           </p>
         </div>
       </div>
@@ -85,12 +79,14 @@
         role="alert"
       >
         <h1 class="font-bold text-xl">API Endpoints</h1>
-        <div class="mt-2">
+        <div class="mt-2 code">
           <code>
-            $ git clone 
+            $ git clone
+            <br />
             $ npm install
+            <br>
+            $ npm run start
           </code>
-          
         </div>
       </div>
 

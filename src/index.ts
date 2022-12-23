@@ -18,9 +18,8 @@ app.listen(PORT, () => {
 // parsing incoming JSON format & Logging stats
 app.use(bodyParser.json(), morgan('dev'));
 
-app.get('/', (req, res) => {
+app.get('/', (req: express.Request, res: express.Response) => {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.use('/resize', routes);
-

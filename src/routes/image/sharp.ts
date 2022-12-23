@@ -1,24 +1,18 @@
-import express from 'express';
-import * as fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-// SharpAPI is Responsable
-
+// SharpAPI is javascript library Responsable to re{size/format/convert} images
 const SharpAPI = async (
   imgName: string,
   width: number,
   height: number,
-  fileExtension: string
-) => {
-  const output = `${
-    path.join(__dirname, '../../../assets/full/') + imgName
-  }.${fileExtension}`;
-
+  fileExtension: string,
+  location: string
+): Promise<void> => {
   try {
     fileExtension == 'png'
-      ? await sharp(imgName).resize(width, height).png().toFile(output)
-      : await sharp(imgName).resize(width, height).jpeg().toFile(output);
+      ? await sharp(imgName).resize(width, height).png().toFile(location)
+      : await sharp(imgName).resize(width, height).jpeg().toFile(location);
   } catch (error) {
     console.error(`Oops! ${error}`);
   }
