@@ -23,3 +23,5 @@ app.get('/', (req: express.Request, res: express.Response) => {
 });
 
 app.use('/resize', routes);
+
+export default app;

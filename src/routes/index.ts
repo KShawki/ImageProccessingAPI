@@ -13,10 +13,10 @@ routes.get(
   '/',
   Exsisting,
   async (req: express.Request, res: express.Response): Promise<void> => {
-    const imgName = req.query.name;
-    const width: string | any = req.query.width;
-    const height: string | any = req.query.height;
-    const fileExtension: string | any = req.query.fileExtension;
+    const imgName = req.query.name as string;
+    const width = parseInt(req.query.width as string);
+    const height = parseInt(req.query.height as string);
+    const fileExtension = req.query.fileExtension as string;
 
     // Input FUle
     const imgPath = `${
