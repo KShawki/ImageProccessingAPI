@@ -43,4 +43,23 @@ describe('endpoint testsuite', (): void => {
     );
     expect(res.status).toBe(200);
   });
+
+  // test imgResize with params
+  it('test resize image function', async () => {
+    
+    const imgPath = path.join(
+      __dirname,
+      '../../images/fjord.jpeg'
+    );
+
+    const Location = path.join(
+      __dirname,
+      '../../images/thumb/fjord_thumb_100_30.jpg'
+    );
+
+    const thumb = await SharpAPI(imgPath, 100, 30, "jpg" ,Location);
+    expect(thumb).toMatch(Location);
+  });
+  
 });
+
