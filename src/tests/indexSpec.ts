@@ -27,4 +27,20 @@ describe('endpoint testsuite', (): void => {
     const res = await app.get('/resize');
     expect(res.status).toBe(200);
   });
+
+  // test resize images
+  it('test resize image function', async () => {
+    const res = await app.get(
+      '/resize?name=encenadaport&width=400&height=400&fileExtension=jpg'
+    );
+    expect(res.status).toBe(200);
+  });
+
+  // get resize images from exsisting folder
+  it('test resize image function', async () => {
+    const res = await app.get(
+      '/resize?name=encenadaport&width=400&height=400&fileExtension=jpg'
+    );
+    expect(res.status).toBe(200);
+  });
 });

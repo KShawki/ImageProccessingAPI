@@ -8,7 +8,7 @@
     "start:prod": "npm run build && node dist/index.js",
     "build": "npx tsc",
     "jasmine": "jasmine",
-    "prettier": "prettier --config .prettierrc 'src/**/*.js' --write",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint --config .eslintrc 'src/**/*.ts'",
     "format": "npm run prettier && npm run lint"
   },
@@ -18,12 +18,12 @@
   "dependencies": {
     "express": "^4.18.2",
     "jasmine": "^4.5.0",
-    "jasmine-spec-reporter": "^7.0.0",
     "sharp": "^0.31.1",
     "supertest": "^6.3.3"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
+    "jasmine-spec-reporter": "^7.0.0",
     "@types/express": "^4.17.15",
     "@types/jasmine": "^4.3.1",
     "@types/morgan": "^1.9.3",
