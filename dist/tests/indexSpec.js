@@ -39,16 +39,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var path_1 = __importDefault(require("path"));
 var sharp_1 = __importDefault(require("../routes/image/sharp"));
 var validation_1 = __importDefault(require("../routes/validation"));
+var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../index"));
+var req = (0, supertest_1.default)(index_1.default);
 describe('Main Functions to be defined', function () {
     it('function SharpAPI is defined', function () {
-        expect(sharp_1.default).toBeDefined;
+        expect(sharp_1.default).toBeDefined();
     });
     it('function Exsisting Images is defined', function () {
-        expect(validation_1.default).toBeDefined;
+        expect(validation_1.default).toBeDefined();
     });
 });
 describe('endpoint testsuite', function () {
@@ -57,7 +58,7 @@ describe('endpoint testsuite', function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, index_1.default.get('/')];
+                case 0: return [4 /*yield*/, req.get('/')];
                 case 1:
                     res = _a.sent();
                     expect(res.status).toBe(200);
@@ -70,10 +71,10 @@ describe('endpoint testsuite', function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, index_1.default.get('/resize')];
+                case 0: return [4 /*yield*/, req.get('/resize')];
                 case 1:
                     res = _a.sent();
-                    expect(res.status).toBe(200);
+                    expect(res.status).toBe(401);
                     return [2 /*return*/];
             }
         });
@@ -83,7 +84,7 @@ describe('endpoint testsuite', function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, index_1.default.get('/resize?name=encenadaport&width=400&height=400&fileExtension=jpg')];
+                case 0: return [4 /*yield*/, req.get('/resize?name=encenadaport&width=400&height=400&fileExtension=jpg')];
                 case 1:
                     res = _a.sent();
                     expect(res.status).toBe(200);
@@ -96,26 +97,10 @@ describe('endpoint testsuite', function () {
         var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, index_1.default.get('/resize?name=encenadaport&width=400&height=400&fileExtension=jpg')];
+                case 0: return [4 /*yield*/, req.get('/resize?name=encenadaport&width=400&height=400&fileExtension=jpg')];
                 case 1:
                     res = _a.sent();
                     expect(res.status).toBe(200);
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    // test imgResize with params
-    it('test resize image function', function () { return __awaiter(void 0, void 0, void 0, function () {
-        var imgPath, Location, thumb;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    imgPath = path_1.default.join(__dirname, '../../images/fjord.jpeg');
-                    Location = path_1.default.join(__dirname, '../../images/thumb/fjord_thumb_100_30.jpg');
-                    return [4 /*yield*/, (0, sharp_1.default)(imgPath, 100, 30, "jpg", Location)];
-                case 1:
-                    thumb = _a.sent();
-                    expect(thumb).toMatch(Location);
                     return [2 /*return*/];
             }
         });

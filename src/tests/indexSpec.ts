@@ -5,32 +5,34 @@ import supertest from 'supertest';
 import { request } from 'express';
 import app from '../index';
 
+const req = supertest(app);
+
 describe('Main Functions to be defined', (): void => {
   it('function SharpAPI is defined', (): void => {
-    expect(SharpAPI).toBeDefined;
+    expect(SharpAPI).toBeDefined();
   });
 
   it('function Exsisting Images is defined', (): void => {
-    expect(Exsisting).toBeDefined;
+    expect(Exsisting).toBeDefined();
   });
 });
 
 describe('endpoint testsuite', (): void => {
   // test main page
   it('test main page', async () => {
-    const res = await app.get('/');
+    const res = await req.get('/');
     expect(res.status).toBe(200);
   });
 
   // test resize endpoint
   it('test main page', async () => {
-    const res = await app.get('/resize');
-    expect(res.status).toBe(200);
+    const res = await req.get('/resize');
+    expect(res.status).toBe(401);
   });
 
   // test resize images
   it('test resize image function', async () => {
-    const res = await app.get(
+    const res = await req.get(
       '/resize?name=encenadaport&width=400&height=400&fileExtension=jpg'
     );
     expect(res.status).toBe(200);
@@ -38,28 +40,9 @@ describe('endpoint testsuite', (): void => {
 
   // get resize images from exsisting folder
   it('test resize image function', async () => {
-    const res = await app.get(
+    const res = await req.get(
       '/resize?name=encenadaport&width=400&height=400&fileExtension=jpg'
     );
     expect(res.status).toBe(200);
   });
-
-  // test imgResize with params
-  it('test resize image function', async () => {
-    
-    const imgPath = path.join(
-      __dirname,
-      '../../images/fjord.jpeg'
-    );
-
-    const Location = path.join(
-      __dirname,
-      '../../images/thumb/fjord_thumb_100_30.jpg'
-    );
-
-    const thumb = await SharpAPI(imgPath, 100, 30, "jpg" ,Location);
-    expect(thumb).toMatch(Location);
-  });
-  
 });
-
